@@ -5,7 +5,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.edu.utfpr.td.tsi.producer.dto.Transacao;
+import br.edu.utfpr.td.tsi.dto.Transacao;
 
 @Component
 public class ProducerMessage {
