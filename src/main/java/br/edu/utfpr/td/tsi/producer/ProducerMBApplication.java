@@ -17,6 +17,6 @@ public class ProducerMBApplication {
 	@Bean
 	public Queue myQueue() {
 		return new Queue("transacoes.financeiras", false);
-	}	
+	}
 
 }

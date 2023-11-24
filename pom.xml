@@ -11,7 +11,7 @@
 
 	<groupId>br.edu.utfpr.td.tsi</groupId>
 	<artifactId>producer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0</version>
 
 	<name>producer message broken</name>
 	<description>producer message broken</description>
@@ -27,7 +27,13 @@
 			<artifactId>dto</artifactId>
 			<version>0.1.0</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.8</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
