@@ -40,7 +40,7 @@ public class ScammerCSV {
             int i = 1;
             while ((nextRecord = csvReader.readNext()) != null) {
                 this.sendMessage(nextRecord);
-                System.out.println(i++ + ", " + nextRecord.toString() + ((double) i / 1000 * 100) + "%");
+                System.out.println(i++ + ", id: " + nextRecord[0] + ", "+ ((double) i / 1000 * 100) + "%");
             }
             csvReader.close();
         } catch (IOException e) {
