@@ -11,7 +11,7 @@
 
 	<groupId>br.edu.utfpr.td.tsi</groupId>
 	<artifactId>producer</artifactId>
-	<version>0.1.0</version>
+	<version>0.1.1</version>
 
 	<name>producer message broken</name>
 	<description>producer message broken</description>
@@ -25,7 +25,6 @@
 		<dependency>
 			<groupId>br.edu.utfpr.td.tsi</groupId>
 			<artifactId>dto</artifactId>
-			<version>0.1.0</version>
 		</dependency>
 
 		<dependency>
