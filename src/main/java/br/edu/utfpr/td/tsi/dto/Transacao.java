@@ -18,6 +18,9 @@ public class Transacao implements Serializable {
         this.vencimento = vencimento;
     }
 
+    public Transacao() {
+    }
+
     public long getId() {
         return id;
     }
