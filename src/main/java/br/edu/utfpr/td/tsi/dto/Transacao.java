@@ -1,8 +1,9 @@
 package br.edu.utfpr.td.tsi.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Transacao {
+public class Transacao implements Serializable {
     private long id;
     private String credente;
     private String pagador;
