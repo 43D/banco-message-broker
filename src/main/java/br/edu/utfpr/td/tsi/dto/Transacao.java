@@ -38,4 +38,26 @@ public class Transacao implements Serializable {
         return vencimento;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setCredente(String credente) {
+        this.credente = credente;
+    }
+
+    public void setPagador(String pagador) {
+        this.pagador = pagador;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public void setVencimento(Date vencimento) {
+        this.vencimento = vencimento;
+    }
+
+    
+
 }
