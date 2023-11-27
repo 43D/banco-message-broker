@@ -11,6 +11,7 @@ public class Transacao implements Serializable {
     private Date vencimento;
 
     public Transacao(long id, String credente, String pagador, double valor, Date vencimento) {
+        super();
         this.id = id;
         this.credente = credente;
         this.pagador = pagador;
@@ -19,24 +20,25 @@ public class Transacao implements Serializable {
     }
 
     public Transacao() {
+        super();
     }
 
     public long getId() {
         return id;
     }
-    
+
     public String getCredente() {
         return credente;
     }
-    
+
     public String getPagador() {
         return pagador;
     }
-    
+
     public double getValor() {
         return valor;
     }
-    
+
     public Date getVencimento() {
         return vencimento;
     }
@@ -61,6 +63,15 @@ public class Transacao implements Serializable {
         this.vencimento = vencimento;
     }
 
-    
+    @Override
+    public String toString() {
+        return "{" +
+                    "\"id\": \"" + id + "\"," +
+                    "\"credente\": \"" + credente + "\"," +
+                    "\"pagador\": \"" + pagador + "\"," +
+                    "\"valor\": \"" + valor + "\"," +
+                    "\"vencimento\": \"" + vencimento + "\"" +
+                "}";
+    }
 
 }
