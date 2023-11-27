@@ -11,7 +11,7 @@
 
 	<groupId>br.edu.utfpr.td.tsi</groupId>
 	<artifactId>consumer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.2.3</version>
 
 	<name>banco message broken</name>
 	<description>banco message broken</description>
@@ -22,6 +22,12 @@
     </properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>br.edu.utfpr.td.tsi</groupId>
+			<artifactId>dto</artifactId>
+			<version>0.2.3</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
