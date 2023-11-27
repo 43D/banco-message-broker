@@ -14,9 +14,9 @@ public class ProducerMessage implements iProducer {
 
     @Autowired
     private Queue queue;
-
+    
     @Override
     public void sendTransacao(Transacao transacao) {
-        rabbitTemplate.convertAndSend(this.queue.getName(), transacao);
+        rabbitTemplate.convertAndSend(this.queue.getName(), transacao.toString());
     }
 }

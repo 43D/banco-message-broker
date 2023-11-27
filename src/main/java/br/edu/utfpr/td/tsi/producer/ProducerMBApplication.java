@@ -10,13 +10,13 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("br.edu.utfpr.td.tsi.producer")
 public class ProducerMBApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ProducerMBApplication.class, args);
-	}
-
 	@Bean
 	public Queue myQueue() {
-		return new Queue("transacoes.financeiras", false);
+		return new Queue("transacoes.financeiras", true);
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(ProducerMBApplication.class, args);
 	}
 
 }
