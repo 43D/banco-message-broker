@@ -9,29 +9,29 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.text.SimpleDateFormat;
 
-import br.edu.utfpr.td.tsi.dto.Transacao;
+import br.edu.utfpr.td.tsi.dto.Transaction;
 
 @Component
-public class TransacaoBuilder implements iTransacaoBuilder {
+public class TransactionBuilder implements iTransactionBuilder {
 
-    private Transacao dto = new Transacao();
+    private Transaction dto = new Transaction();
 
     @Override
-    public TransacaoBuilder createTransacaoFromCSV(String[] record) {
+    public TransactionBuilder createTransactionFromCSV(String[] record) {
         this.setId(record[0]);
         this.setLender(record[1]);
         this.setDebtor(record[2]);
-        this.setPrice(record[3]);
-        this.setDate(record[4]);
+        this.setAmount(record[3]);
+        this.setDueDate(record[4]);
         return this;
     }
 
     @Override
-    public TransacaoBuilder createTransacaoFromJson(String json) {
+    public TransactionBuilder createTransactionFromJson(String json) {
 
         ObjectMapper om = new ObjectMapper();
         try {
-            this.dto = om.readValue(json, Transacao.class);
+            this.dto = om.readValue(json, Transaction.class);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -40,50 +40,50 @@ public class TransacaoBuilder implements iTransacaoBuilder {
     }
 
     @Override
-    public TransacaoBuilder setId(String str) {
+    public TransactionBuilder setId(String str) {
         dto.setId(Long.parseLong(str));
         return this;
     }
 
     @Override
-    public TransacaoBuilder setLender(String str) {
-        dto.setCredente(str);
+    public TransactionBuilder setLender(String str) {
+        dto.setLender(str);
         return this;
     }
 
     @Override
-    public TransacaoBuilder setDebtor(String str) {
-        dto.setPagador(str);
+    public TransactionBuilder setDebtor(String str) {
+        dto.setDebtor(str);
         return this;
     }
 
     @Override
-    public TransacaoBuilder setPrice(String str) {
-        dto.setValor(Double.parseDouble(str));
+    public TransactionBuilder setAmount(String str) {
+        dto.setAmount(Double.parseDouble(str));
         return this;
     }
 
     @Override
-    public TransacaoBuilder setDate(String str) {
+    public TransactionBuilder setDueDate(String str) {
         String data = str.replaceAll("/", "-");
 
-        Date dataTransacao = null;
+        Date dataTransaction = null;
         try {
             SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
-            dataTransacao = formato.parse(data);
+            dataTransaction = formato.parse(data);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        dto.setVencimento(dataTransacao);
+        dto.setDueData(dataTransaction);
         return this;
     }
 
     @Override
-    public Transacao builder() {
-        Transacao transacao = this.dto;
-        this.dto = new Transacao();
-        return transacao;
+    public Transaction builder() {
+        Transaction Transaction = this.dto;
+        this.dto = new Transaction();
+        return Transaction;
     }
 
 }
