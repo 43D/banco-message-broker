@@ -11,7 +11,6 @@ public class Transacao implements Serializable {
     private Date vencimento;
 
     public Transacao(long id, String credente, String pagador, double valor, Date vencimento) {
-        super();
         this.id = id;
         this.credente = credente;
         this.pagador = pagador;
@@ -20,7 +19,6 @@ public class Transacao implements Serializable {
     }
 
     public Transacao() {
-        super();
     }
 
     public long getId() {
