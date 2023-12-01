@@ -7,7 +7,7 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.edu.utfpr.td.tsi.dto.Transacao;
+import br.edu.utfpr.td.tsi.dto.Transaction;
 import br.edu.utfpr.td.tsi.producer.services.CSV.ScammerCSV;
 import br.edu.utfpr.td.tsi.producer.services.Producer.iProducer;
 import jakarta.annotation.PostConstruct;
@@ -30,9 +30,9 @@ public class ProcessTransacoes {
     @PostConstruct
     public void init() {
         amqpAdmin.declareQueue(queue);
-        List<Transacao> transacoes = scam.read();
-        for (Transacao transacao : transacoes) {
-            produtor.sendTransacao(transacao);
+        List<Transaction> transacoes = scam.read();
+        for (Transaction transaction : transacoes) {
+            produtor.sendTransaction(transaction);
         }
     }
 }

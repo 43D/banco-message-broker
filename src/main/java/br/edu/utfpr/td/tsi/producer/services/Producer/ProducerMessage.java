@@ -5,7 +5,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.edu.utfpr.td.tsi.dto.Transacao;
+import br.edu.utfpr.td.tsi.dto.Transaction;
 
 @Component
 public class ProducerMessage implements iProducer {
@@ -16,7 +16,7 @@ public class ProducerMessage implements iProducer {
     private Queue queue;
     
     @Override
-    public void sendTransacao(Transacao transacao) {
-        rabbitTemplate.convertAndSend(this.queue.getName(), transacao.toString());
+    public void sendTransaction(Transaction transaction) {
+        rabbitTemplate.convertAndSend(this.queue.getName(), transaction.toString());
     }
 }

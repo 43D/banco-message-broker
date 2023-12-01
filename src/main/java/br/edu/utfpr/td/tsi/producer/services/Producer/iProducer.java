@@ -1,7 +1,7 @@
 package br.edu.utfpr.td.tsi.producer.services.Producer;
 
-import br.edu.utfpr.td.tsi.dto.Transacao;
+import br.edu.utfpr.td.tsi.dto.Transaction;
 
 public interface iProducer {
-    public void sendTransacao(Transacao transacao);
+    public void sendTransaction(Transaction transaction);
 }
