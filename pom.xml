@@ -5,7 +5,7 @@
 
 	<groupId>br.edu.utfpr.td.tsi</groupId>
 	<artifactId>dto</artifactId>
-	<version>0.2.3</version>
+	<version>0.3.0</version>
 
 	<name>DTO for message broken</name>
 	<description>DTO for  message broken</description>
@@ -14,5 +14,13 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.16.0</version>
+		</dependency>
+	</dependencies>
 
 </project>
