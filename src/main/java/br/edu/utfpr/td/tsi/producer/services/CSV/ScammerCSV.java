@@ -18,7 +18,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvValidationException;
 
-import br.edu.utfpr.td.tsi.builder.TransacaoBuilder;
+import br.edu.utfpr.td.tsi.builder.iTransacaoBuilder;
 import br.edu.utfpr.td.tsi.dto.Transacao;
 import br.edu.utfpr.td.tsi.producer.services.Producer.iProducer;
 
@@ -29,6 +29,8 @@ public class ScammerCSV {
     @Autowired
     iProducer produtor;
 
+    @Autowired
+    private iTransacaoBuilder transacaoBuilder;
     
     public List<Transacao> read() {
         Resource resource = new ClassPathResource("transacoes.csv");
@@ -54,7 +56,7 @@ public class ScammerCSV {
     }
 
     private void sendMessage(String[] record) {
-        Transacao dto = new TransacaoBuilder().createTransacaoFromCSV(record).builder();
+        Transacao dto = transacaoBuilder.createTransacaoFromCSV(record).builder();
         transacoes.add(dto);
     }
 }

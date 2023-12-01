@@ -24,10 +24,13 @@ public class ProcessTransacoes {
     @Autowired
     private iProducer produtor;
 
+    @Autowired
+    private ScammerCSV scam;
+
     @PostConstruct
     public void init() {
         amqpAdmin.declareQueue(queue);
-        List<Transacao> transacoes = new ScammerCSV().read();
+        List<Transacao> transacoes = scam.read();
         for (Transacao transacao : transacoes) {
             produtor.sendTransacao(transacao);
         }

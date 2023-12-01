@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("br.edu.utfpr.td.tsi.producer")
+@ComponentScan({"br.edu.utfpr.td.tsi.producer", "br.edu.utfpr.td.tsi.builder"})
 public class ProducerMBApplication {
 
 	@Bean
