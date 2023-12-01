@@ -12,10 +12,11 @@ import java.text.SimpleDateFormat;
 import br.edu.utfpr.td.tsi.dto.Transacao;
 
 @Component
-public class TransacaoBuilder {
+public class TransacaoBuilder implements iTransacaoBuilder {
 
     private Transacao dto = new Transacao();
 
+    @Override
     public TransacaoBuilder createTransacaoFromCSV(String[] record) {
         this.setId(record[0]);
         this.setLender(record[1]);
@@ -25,6 +26,7 @@ public class TransacaoBuilder {
         return this;
     }
 
+    @Override
     public TransacaoBuilder createTransacaoFromJson(String json) {
 
         ObjectMapper om = new ObjectMapper();
@@ -37,26 +39,31 @@ public class TransacaoBuilder {
         return this;
     }
 
+    @Override
     public TransacaoBuilder setId(String str) {
         dto.setId(Long.parseLong(str));
         return this;
     }
 
+    @Override
     public TransacaoBuilder setLender(String str) {
         dto.setCredente(str);
         return this;
     }
 
+    @Override
     public TransacaoBuilder setDebtor(String str) {
         dto.setPagador(str);
         return this;
     }
 
+    @Override
     public TransacaoBuilder setPrice(String str) {
         dto.setValor(Double.parseDouble(str));
         return this;
     }
 
+    @Override
     public TransacaoBuilder setDate(String str) {
         String data = str.replaceAll("/", "-");
 
@@ -72,6 +79,7 @@ public class TransacaoBuilder {
         return this;
     }
 
+    @Override
     public Transacao builder() {
         Transacao transacao = this.dto;
         this.dto = new Transacao();
