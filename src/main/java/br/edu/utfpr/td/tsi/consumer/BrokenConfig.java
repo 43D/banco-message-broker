@@ -34,7 +34,7 @@ public class BrokenConfig {
 
     @Bean
     public FanoutExchange fanoutExchange() {
-        return new FanoutExchange("transacoes.financeiras.exchange.fanout", true, false);
+        return new FanoutExchange("transacoes.suspeitas", true, false);
     }
 
     @Bean
