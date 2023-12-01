@@ -18,9 +18,9 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvValidationException;
 
+import br.edu.utfpr.td.tsi.builder.TransacaoBuilder;
 import br.edu.utfpr.td.tsi.dto.Transacao;
 import br.edu.utfpr.td.tsi.producer.services.Producer.iProducer;
-import br.edu.utfpr.td.tsi.producer.util.CreateDTO;
 
 @Component
 public class ScammerCSV {
@@ -54,6 +54,7 @@ public class ScammerCSV {
     }
 
     private void sendMessage(String[] record) {
-        transacoes.add(CreateDTO.createTransacao(record));
+        Transacao dto = new TransacaoBuilder().createTransacaoFromCSV(record).builder();
+        transacoes.add(dto);
     }
 }
