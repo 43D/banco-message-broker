@@ -1,6 +1,7 @@
 package br.edu.utfpr.td.tsi.dto;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -39,7 +40,7 @@ public class Transacao implements Serializable {
         return valor;
     }
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "EEE MMM dd HH:mm:ss zzz yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     public Date getVencimento() {
         return vencimento;
     }
@@ -66,12 +67,13 @@ public class Transacao implements Serializable {
 
     @Override
     public String toString() {
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         return "{" +
-                    "\"id\": \"" + id + "\"," +
-                    "\"credente\": \"" + credente + "\"," +
-                    "\"pagador\": \"" + pagador + "\"," +
-                    "\"valor\": \"" + valor + "\"," +
-                    "\"vencimento\": \"" + vencimento + "\"" +
+                "\"id\": \"" + id + "\"," +
+                "\"credente\": \"" + credente + "\"," +
+                "\"pagador\": \"" + pagador + "\"," +
+                "\"valor\": \"" + valor + "\"," +
+                "\"vencimento\": \"" + formato.format(vencimento) + "\"" +
                 "}";
     }
 

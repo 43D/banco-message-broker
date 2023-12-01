@@ -5,7 +5,7 @@
 
 	<groupId>br.edu.utfpr.td.tsi</groupId>
 	<artifactId>dto</artifactId>
-	<version>0.3.3</version>
+	<version>0.3.4</version>
 
 	<name>DTO for message broken</name>
 	<description>DTO for  message broken</description>
