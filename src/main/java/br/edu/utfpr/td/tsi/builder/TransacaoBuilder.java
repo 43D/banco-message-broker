@@ -2,6 +2,8 @@ package br.edu.utfpr.td.tsi.builder;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -9,6 +11,7 @@ import java.text.SimpleDateFormat;
 
 import br.edu.utfpr.td.tsi.dto.Transacao;
 
+@Component
 public class TransacaoBuilder {
 
     private Transacao dto = new Transacao();
