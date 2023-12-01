@@ -11,7 +11,7 @@
 
 	<groupId>br.edu.utfpr.td.tsi</groupId>
 	<artifactId>policia-federal</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0</version>
 
 	<name>policia message broken</name>
 	<description>policia message broken</description>
