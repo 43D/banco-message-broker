@@ -11,11 +11,7 @@ import br.edu.utfpr.td.tsi.dto.Transacao;
 
 public class TransacaoBuilder {
 
-    private Transacao dto;
-
-    public TransacaoBuilder() {
-        this.dto = new Transacao();
-    }
+    private Transacao dto = new Transacao();
 
     public TransacaoBuilder createTransacaoFromCSV(String[] record) {
         this.setId(record[0]);

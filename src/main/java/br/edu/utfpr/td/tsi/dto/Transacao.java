@@ -3,6 +3,8 @@ package br.edu.utfpr.td.tsi.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Transacao implements Serializable {
     private long id;
     private String credente;
@@ -37,6 +39,7 @@ public class Transacao implements Serializable {
         return valor;
     }
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "EEE MMM dd HH:mm:ss zzz yyyy")
     public Date getVencimento() {
         return vencimento;
     }
