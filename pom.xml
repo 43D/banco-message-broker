@@ -11,7 +11,7 @@
 
 	<groupId>br.edu.utfpr.td.tsi</groupId>
 	<artifactId>consumer</artifactId>
-	<version>0.3.2</version>
+	<version>0.4.0</version>
 
 	<name>banco message broken</name>
 	<description>banco message broken</description>

@@ -13,15 +13,17 @@ import jakarta.annotation.PostConstruct;
 
 @Component
 public class BrokenConfig {
-    @Autowired
-    private Queue queue;
+    @Bean
+	public Queue myQueue() {
+		return new Queue("transacoes.financeiras", true);
+	}
 
     @Autowired
     private AmqpAdmin amqpAdmin;
 
     @PostConstruct
     private void init() {
-        amqpAdmin.declareQueue(queue);
+        amqpAdmin.declareQueue(myQueue());
         Queue qPoliciaFederal = policiaFederalQueue();
         amqpAdmin.declareQueue(qPoliciaFederal);
         Queue qReceitaFederal = receitaFederalQueue();
