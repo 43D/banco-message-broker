@@ -1,4 +1,4 @@
-package br.edu.utfpr.td.tsi.producer.services;
+package br.edu.utfpr.td.tsi.producer;
 
 import java.util.List;
 
